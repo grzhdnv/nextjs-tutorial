@@ -1,5 +1,6 @@
-import Head from "next/head";
 import A from "./A";
+import Head from "next/head";
+import styles from "../styles/MainContainer.module.css";
 
 const MainContainer = ({ children, keywords }) => {
   return (
@@ -8,17 +9,11 @@ const MainContainer = ({ children, keywords }) => {
         <meta keywords={"mgrzhdnv, nextjs" + keywords}></meta>
         <title>Main Page</title>
       </Head>
-      <div className="navbar">
+      <div className={styles.navbar}>
         <A href={"/"} text="Main"></A>
         <A href={"/users"} text="Users"></A>
       </div>
       <div>{children}</div>
-      <style jsx>{`
-        .navbar {
-          background: orange;
-          padding: 15px;
-        }
-      `}</style>
     </>
   );
 };
